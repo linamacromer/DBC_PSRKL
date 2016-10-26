@@ -1,5 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Match, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Match, type: :model do
+  it { should validate_presence_of(:competitor1) }
+  it { should validate_presence_of(:competitor2) }
 end
