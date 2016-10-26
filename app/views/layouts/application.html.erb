@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DBCPsrkl</title>
+  <title>Puget Sound Region Karate League</title>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <h1 id="logo"><a class="fo" href="/">Puget Sound Region Karate League</a></h1>
+    <div class="nav">
+      <ul>
+        <li>
+          <a href="/">home</a>
+        </li>
+      </ul>
+    </div>
+  </header>
 
 <%= yield %>
 
