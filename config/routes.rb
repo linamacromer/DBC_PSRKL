@@ -9,7 +9,7 @@ DBCPsrkl::Application.routes.draw do
   resources :admin, only: [:index]
 
   scope 'admin' do
-    resources :competitor, only: [:new, :create, :index]
+    resources :competitors, only: [:new, :create, :index]
   end
 
 end

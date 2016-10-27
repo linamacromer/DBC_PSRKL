@@ -16,4 +16,6 @@
 /tmp
 
 # Ignore coverage pushes
-/coverage
+coverage/
+
+
