@@ -55,6 +55,7 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'capybara'
   gem 'launchy'
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 gem 'simplecov', :require => false, :group => :test
