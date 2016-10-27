@@ -30,7 +30,12 @@ feature "users can see the calendar" do
       visit '/calendar'
       click_link 'October'
       expect(page).to have_content('October')
-      # expect(page).not_to have_content('November')
+    end
+
+    scenario "the user can not see other months data when user click on month" do
+      visit '/calendar'
+      click_link 'October'
+      expect(page).not_to have_table('November')
     end
   end
 end
