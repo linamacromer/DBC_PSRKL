@@ -11,5 +11,26 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe AdminHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "login" do
+    before(:each) do
+      expect(session[:logged_in]).to eq nil
+      helper.login
+    end
+
+    it "logs the administrator in" do
+      expect(session[:logged_in]).to eq true
+    end
+
+    it "makes logged_in? return true" do
+      expect(helper.logged_in?).to eq true
+    end
+  end
+
+  describe "logout" do
+    it "logs the administrator out" do
+      session[:logged_in] = true
+      helper.logout
+      expect(session[:logged_in]).to eq false
+    end
+  end
 end
