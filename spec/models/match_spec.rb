@@ -1,17 +1,12 @@
 require 'rails_helper'
 
 describe Match, type: :model do
-  let(:competitor1) { Competitor.create!(name: "Alex")}
-  let(:competitor2) { Competitor.create!(name: "Jason")}
-  let(:valid_match) { {
-      competitor1: competitor1,
-      competitor2: competitor2,
-      start_time: Time.now,
-      season: "Season 1",
-      location: "Basketball Court"
-    } }
+  let(:competitor1) { create(:competitor, name: "Alex")}
+  let(:competitor2) { create(:competitor, name: "Jason")}
 
-  let(:match1) { Match.create(valid_match)}
+  let(:match1) { create(:match, competitor1: competitor1, competitor2: competitor2) }
+
+  let(:match_list) { create_list(:match, 3, competitor1: competitor1, competitor2: competitor2, winner: competitor2, loser: competitor1) }
 
   describe "Validations" do
     it { should validate_presence_of(:competitor1) }
@@ -39,7 +34,24 @@ describe Match, type: :model do
 
   describe "#competitors" do
     it "returns an array of competitor objects" do
+
       expect(match1.competitors).to eq([competitor1,competitor2])
+    end
+  end
+
+  describe "#rank" do
+    context "return the position of a competitor in the standings" do
+
+
+      it "returns position 1 when competitor has the most wins" do
+        match_list
+        expect(competitor2.rank).to eq(1)
+      end
+
+      it "returns position 2 when competitor has the second most wins" do
+        match_list
+        expect(competitor1.rank).to eq(2)
+      end
     end
   end
 end
