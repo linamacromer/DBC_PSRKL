@@ -6,6 +6,10 @@ DBCPsrkl::Application.routes.draw do
 
   resources :calendar, only: [:index]
 
+  scope 'admin' do
+    resources :competitor, only: [:new, :create, :index]
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
