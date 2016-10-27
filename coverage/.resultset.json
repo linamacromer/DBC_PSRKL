@@ -1,14 +1,20 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/apprentice/psrkl/DBC_PSRKL/app/helpers/admin_helper.rb": [
+        1,
+        null
+      ],
       "/Users/apprentice/psrkl/DBC_PSRKL/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/apprentice/psrkl/DBC_PSRKL/app/controllers/calendar_controller.rb": [
+      "/Users/apprentice/psrkl/DBC_PSRKL/app/controllers/admin_controller.rb": [
+        1,
+        null,
         1,
         1,
-        1,
+        null,
         null,
         null
       ],
@@ -17,6 +23,13 @@
         null,
         null,
         1,
+        null
+      ],
+      "/Users/apprentice/psrkl/DBC_PSRKL/app/controllers/calendar_controller.rb": [
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/apprentice/psrkl/DBC_PSRKL/app/controllers/home_controller.rb": [
@@ -169,6 +182,6 @@
         null
       ]
     },
-    "timestamp": 1477593922
+    "timestamp": 1477594805
   }
 }
