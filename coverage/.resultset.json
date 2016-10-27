@@ -1,14 +1,20 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/apprentice/Desktop/DBC-Challenges/ClientProject/DBC_PSRKL/app/helpers/admin_helper.rb": [
+        1,
+        null
+      ],
       "/Users/apprentice/Desktop/DBC-Challenges/ClientProject/DBC_PSRKL/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/apprentice/Desktop/DBC-Challenges/ClientProject/DBC_PSRKL/app/controllers/calendar_controller.rb": [
+      "/Users/apprentice/Desktop/DBC-Challenges/ClientProject/DBC_PSRKL/app/controllers/admin_controller.rb": [
+        1,
+        null,
         1,
         1,
-        1,
+        null,
         null,
         null
       ],
@@ -19,25 +25,32 @@
         1,
         null
       ],
+      "/Users/apprentice/Desktop/DBC-Challenges/ClientProject/DBC_PSRKL/app/controllers/calendar_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/apprentice/Desktop/DBC-Challenges/ClientProject/DBC_PSRKL/app/controllers/competitor_controller.rb": [
         1,
         1,
         null,
         null,
         1,
-        0,
+        4,
         null,
-        0,
-        0,
+        4,
+        2,
         null,
-        0,
+        2,
         null,
         null,
-        null,
-        1,
         null,
         1,
-        0,
+        null,
+        1,
+        4,
         null,
         null,
         null
@@ -108,6 +121,6 @@
         null
       ]
     },
-    "timestamp": 1477591385
+    "timestamp": 1477593444
   }
 }

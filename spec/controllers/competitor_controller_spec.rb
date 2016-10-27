@@ -17,9 +17,9 @@ RSpec.describe CompetitorController, type: :controller do
         expect(response).to have_http_status(302)
       end
 
-      it "redirects to the root" do ####FOR NOW!!! CHANGE TO REDIRECT TO ADMIN DASHBOARD
+      it "redirects to the admin dashboard" do
         post(:create, { competitor: { name: "John Doe" }})
-        expect(response).to redirect_to(root_path)
+        expect(response).to redirect_to(admin_index_path)
       end
     end
 

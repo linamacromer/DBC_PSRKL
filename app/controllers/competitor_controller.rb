@@ -6,7 +6,7 @@ class CompetitorController < ApplicationController
     @competitor = Competitor.new(competitor_params)
 
     if @competitor.save
-      redirect_to root_path ####TODO: UPDATE REDIRECT TO ADMIN DASHBOARD WHEN AVAILABLE
+      redirect_to admin_index_path
     else
       render 'new'
     end
