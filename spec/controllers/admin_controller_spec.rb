@@ -4,7 +4,7 @@ RSpec.describe AdminController, type: :controller do
 
   describe 'admin#index' do
     it 'loads the dashboard page' do
-      expect(get :index).to render :index
+      expect(get :index).to render_template :index
     end
   end
 
