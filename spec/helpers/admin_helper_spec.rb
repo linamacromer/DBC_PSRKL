@@ -36,11 +36,11 @@ RSpec.describe AdminHelper, type: :helper do
 
   describe "authenticate" do
     it 'authenticates if password is valid' do
-
+      expect(authenticate(ENV["ADMIN_PASSWORD"])).to eq(true)
     end
 
     it 'fails to authenticate if password is invalid' do
-
+      expect(authenticate("passworf")).to eq(false)
     end
   end
 end
