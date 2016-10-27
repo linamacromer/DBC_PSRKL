@@ -1,0 +1,24 @@
+<h1>Competition Calendar</h1>
+
+<div>
+  <table>
+    <div id="calendar-header">
+      <tr>
+        <th>Date</th>
+        <th>Competitor 1 Name</th>
+        <th>Competitor 2 Name</th>
+        <th>Location</th>
+      </tr>
+    </div>
+    <div id="calendar-data">
+      <% @matches.each do |match| %>
+        <tr id="match_<%=match.id%>">
+          <td><%= time_tag(match.start_time) %></td>
+          <td><%= Competitor.find(match.competitor1_id).name %></td>
+          <td><%= Competitor.find(match.competitor2_id).name %></td>
+          <td><%= match.location %></td>
+        </tr>
+      <% end %>
+    </div>
+  </table>
+</div>
