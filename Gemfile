@@ -55,13 +55,10 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'capybara'
   gem 'launchy'
+  gem "factory_girl_rails", "~> 4.0"
 end
 
-
-gem "factory_girl_rails", "~> 4.0"
-
 gem 'simplecov', :require => false, :group => :test
-
 
 # Allows asset pipeline to work on Heroku
 group :production do
