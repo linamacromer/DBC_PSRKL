@@ -20,10 +20,30 @@ nav {
   }
 }
 
+.bggrey {
+  background-color: #222222;
+  border-color: #222222
+}
+
+.bggrey:hover {
+  background-color: #B80B36;
+  border-color: #B80B36
+}
+
 @media screen and (max-width: 767px) {
   nav #logo {
     margin-left: 0px;
     height: 75px;
+  }
+
+  .table-mobile-media {
+    display: none
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .table-desktop-media {
+    display: none
   }
 }
 
