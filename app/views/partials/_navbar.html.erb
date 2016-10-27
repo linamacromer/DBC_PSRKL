@@ -15,8 +15,16 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right" id="navbar-right">
+      <% if session[:logged_in] == true %>
+      <!-- Conditional statement may change -->
+        <li><a href="/admin/competitors">Competitors</a></li>
+        <li><a href="admin/matches">Matches</a></li>
+      <% end %>
         <li><a href="/standings">Standings</a></li>
         <li><a href="#">Calendar</a></li>
+      <% if session[:logged_in] == true %>
+        <li><a href="/admin/logout">Logout</a></li>
+      <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
