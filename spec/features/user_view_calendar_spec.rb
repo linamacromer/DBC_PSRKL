@@ -17,4 +17,25 @@ feature "users can see the calendar" do
       expect(page).to have_css '#match_' + matches[2].id.to_s
     end
   end
+
+  context "when user selects month selector" do
+    scenario "the user can see months to select in drop down" do
+      visit '/calendar'
+      expect(page).to have_link('October', href: "/calendar?start_date=October")
+    end
+  end
+
+  context "when user click on month" do
+    scenario "the user can see specific months data when user click on month" do
+      visit '/calendar'
+      click_link 'October'
+      expect(page).to have_content('October')
+    end
+
+    scenario "the user can not see other months data when user click on month" do
+      visit '/calendar'
+      click_link 'October'
+      expect(page).not_to have_table('November')
+    end
+  end
 end
