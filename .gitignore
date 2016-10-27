@@ -17,3 +17,7 @@
 
 # Ignore coverage pushes
 /coverage/*
+/coverage/*.json
+/coverage/*.lock
+/coverage/*.html
+

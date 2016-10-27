@@ -32,8 +32,13 @@
         null,
         null
       ],
-      "/Users/apprentice/psrkl/DBC_PSRKL/app/controllers/competitor_controller.rb": [
+      "/Users/apprentice/psrkl/DBC_PSRKL/app/controllers/competitors_controller.rb": [
         1,
+        null,
+        1,
+        1,
+        null,
+        null,
         1,
         null,
         null,
@@ -205,6 +210,6 @@
         null
       ]
     },
-    "timestamp": 1477604594
+    "timestamp": 1477608647
   }
 }
