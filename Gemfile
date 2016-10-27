@@ -58,3 +58,8 @@ group :test do
 end
 
 gem "factory_girl_rails", "~> 4.0"
+
+# Allows asset pipeline to work on Heroku
+group :production do
+  gem 'rails_12factor'
+end

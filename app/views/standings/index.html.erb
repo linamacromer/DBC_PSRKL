@@ -11,15 +11,17 @@
       <th>Win %</th>
       <th>Win/Loss</th>
     </tr>
-    <% @standings.each do |competitor| %>
-      <tr>
-        <td><%=competitor.rank%></td>
-        <td><%= competitor.name %></td>
-        <td><%= competitor.wincount %></td>
-        <td><%= competitor.losscount %></td>
-        <td><%= competitor.winpercent %></td>
-        <td><%= competitor.winloss %></td>
-      </tr>
+    <% if @standings != nil %>
+      <% @standings.each do |competitor| %>
+        <tr>
+          <td><%= competitor.rank %></td>
+          <td><%= competitor.name %></td>
+          <td><%= competitor.wincount %></td>
+          <td><%= competitor.losscount %></td>
+          <td><%= competitor.winpercent %></td>
+          <td><%= competitor.winloss %></td>
+        </tr>
+      <% end %>
     <% end %>
   </table>
 </div>
