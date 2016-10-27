@@ -7,7 +7,7 @@ describe Competitor, type: :model do
       competitor1: competitor1,
       competitor2: competitor2,
       start_time: Time.now,
-      season: "Season 1",
+      season: 1,
       location: "Basketball Court"
     } }
 

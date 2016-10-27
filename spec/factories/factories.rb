@@ -7,7 +7,7 @@ FactoryGirl.define do
     start_time Time.now
 
     location "Basketball Court"
-    season "Season 1"
+    season 1
     association :competitor1, factory: :competitor, strategy: :create
     association :competitor2, factory: :competitor, strategy: :create
 
