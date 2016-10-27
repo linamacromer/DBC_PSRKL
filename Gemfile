@@ -56,3 +56,8 @@ group :test do
   gem 'capybara'
   gem 'launchy'
 end
+
+# Allows asset pipeline to work on Heroku
+group :production do
+  gem 'rails_12factor'
+end
