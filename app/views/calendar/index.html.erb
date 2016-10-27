@@ -1,24 +1,35 @@
 <h1>Competition Calendar</h1>
 
 <div>
-  <table>
-    <div id="calendar-header">
-      <tr>
-        <th>Date</th>
-        <th>Competitor 1 Name</th>
-        <th>Competitor 2 Name</th>
-        <th>Location</th>
-      </tr>
-    </div>
-    <div id="calendar-data">
-      <% @matches.each do |match| %>
-        <tr id="match_<%=match.id%>">
-          <td><%= time_tag(match.start_time) %></td>
-          <td><%= Competitor.find(match.competitor1_id).name %></td>
-          <td><%= Competitor.find(match.competitor2_id).name %></td>
-          <td><%= match.location %></td>
+  <div id='month-selector'>
+    <%= form_tag(:url=> '/calendar', :html => { :method => 'GET' }) do |f| %>
+    <%#= form_for :calendar, :url=> calendar_path do |f| %>
+      <select name="start_date">
+        select_tag "months", "<option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option>".html_safe
+      </select>
+      <%= submit_tag("Search") %>
+    <% end %>
+  </div>
+  <div id ='match-calendar'>
+    <table>
+      <div id="calendar-header">
+        <tr>
+          <th>Date</th>
+          <th>Competitor 1 Name</th>
+          <th>Competitor 2 Name</th>
+          <th>Location</th>
         </tr>
-      <% end %>
-    </div>
-  </table>
+      </div>
+      <div id="calendar-data">
+        <% @matches.each do |match| %>
+          <tr id="match_<%=match.id%>">
+            <td><%= time_tag(match.start_time) %></td>
+            <td><%= Competitor.find(match.competitor1_id).name %></td>
+            <td><%= Competitor.find(match.competitor2_id).name %></td>
+            <td><%= match.location %></td>
+          </tr>
+        <% end %>
+      </div>
+    </table>
+  </div>
 </div>
