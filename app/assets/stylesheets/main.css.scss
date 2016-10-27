@@ -26,6 +26,12 @@ nav {
   color: white;
 }
 
+ .bggrey:focus{
+  background-color: #222222;
+  border-color: #222222;
+  color: white;
+ }
+
 .bggrey:hover, .bggrey:active, .bggrey:visited {
   background-color: #B80B36;
   border-color: #B80B36;
