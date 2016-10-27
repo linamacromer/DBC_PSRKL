@@ -22,13 +22,16 @@ nav {
 
 .bggrey {
   background-color: #222222;
-  border-color: #222222
+  border-color: #222222;
+  color: white;
 }
 
-.bggrey:hover {
+.bggrey:hover, .bggrey:active, .bggrey:visited {
   background-color: #B80B36;
-  border-color: #B80B36
+  border-color: #B80B36;
+  color: white;
 }
+
 
 @media screen and (max-width: 767px) {
   nav #logo {
