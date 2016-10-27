@@ -1,15 +1,15 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/apprentice/psrkl/DBC_PSRKL/app/helpers/admin_helper.rb": [
+      "/Users/apprentice/Desktop/DBC-Challenges/DBC_PSRKL/app/helpers/admin_helper.rb": [
         1,
         null
       ],
-      "/Users/apprentice/psrkl/DBC_PSRKL/app/helpers/application_helper.rb": [
+      "/Users/apprentice/Desktop/DBC-Challenges/DBC_PSRKL/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/apprentice/psrkl/DBC_PSRKL/app/controllers/admin_controller.rb": [
+      "/Users/apprentice/Desktop/DBC-Challenges/DBC_PSRKL/app/controllers/admin_controller.rb": [
         1,
         null,
         1,
@@ -18,21 +18,38 @@
         null,
         null
       ],
-      "/Users/apprentice/psrkl/DBC_PSRKL/app/controllers/application_controller.rb": [
+      "/Users/apprentice/Desktop/DBC-Challenges/DBC_PSRKL/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/Users/apprentice/psrkl/DBC_PSRKL/app/controllers/calendar_controller.rb": [
+      "/Users/apprentice/Desktop/DBC-Challenges/DBC_PSRKL/app/controllers/calendar_controller.rb": [
         1,
         1,
+        6,
+        2,
+        2,
+        2,
+        null,
+        4,
+        null,
+        null,
+        null,
         1,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         null,
         null
       ],
-      "/Users/apprentice/psrkl/DBC_PSRKL/app/controllers/competitor_controller.rb": [
+      "/Users/apprentice/Desktop/DBC-Challenges/DBC_PSRKL/app/controllers/competitor_controller.rb": [
         1,
         1,
         null,
@@ -55,13 +72,13 @@
         null,
         null
       ],
-      "/Users/apprentice/psrkl/DBC_PSRKL/app/controllers/home_controller.rb": [
+      "/Users/apprentice/Desktop/DBC-Challenges/DBC_PSRKL/app/controllers/home_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/apprentice/psrkl/DBC_PSRKL/app/controllers/standings_controller.rb": [
+      "/Users/apprentice/Desktop/DBC-Challenges/DBC_PSRKL/app/controllers/standings_controller.rb": [
         1,
         1,
         2,
@@ -81,7 +98,7 @@
         null,
         null
       ],
-      "/Users/apprentice/psrkl/DBC_PSRKL/app/models/competitor.rb": [
+      "/Users/apprentice/Desktop/DBC-Challenges/DBC_PSRKL/app/models/competitor.rb": [
         1,
         1,
         null,
@@ -161,7 +178,7 @@
         null,
         null
       ],
-      "/Users/apprentice/psrkl/DBC_PSRKL/app/models/match.rb": [
+      "/Users/apprentice/Desktop/DBC-Challenges/DBC_PSRKL/app/models/match.rb": [
         1,
         1,
         1,
@@ -205,6 +222,6 @@
         null
       ]
     },
-    "timestamp": 1477604594
+    "timestamp": 1477609112
   }
 }

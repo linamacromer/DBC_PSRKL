@@ -4,7 +4,7 @@ DBCPsrkl::Application.routes.draw do
 
   root "home#index"
 
-  resources :calendar, only: [:index]
+  resources :calendar, only: [:index, :create]
 
   resources :admin, only: [:index]
 
