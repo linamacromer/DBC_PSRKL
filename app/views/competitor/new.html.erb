@@ -1,0 +1,10 @@
+<h1>Add new competitor:</h1>
+
+<%= form_for :competitor, :url => competitor_index_path do |f| %>
+<div class="form-group">
+  <%= f.label :name %>:
+  <%= f.text_field :name, class: "form-control" %>
+</div>
+
+  <%= f.submit "Submit", class: "btn btn-primary btn-lg active" %>
+<% end %>
