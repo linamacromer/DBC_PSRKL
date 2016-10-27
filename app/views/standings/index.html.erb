@@ -1,6 +1,11 @@
 <div id='title-container'>
   <h1>Standings</h1>
 </div>
+Sort by:
+<a href="/standings?time=season">Season</a>
+<a href="/standings?time=week">Week</a>
+<a href="/standings?time=month">Month</a>
+<a href="/standings?time=all">All</a>
 <div id='standings-container'>
   <table class="standings table table-hover">
     <thead>
@@ -14,9 +19,10 @@
       </tr>
     </thead>
     <tbody>
-      <% if @standings != nil %>
+        <% if @standings.length > 0 %>
         <% @standings.each do |competitor| %>
           <tr scope="row">
+            <% competitor.time_frame = @time %>
             <td><%= competitor.rank %></td>
             <td><%= competitor.name %></td>
             <td><%= competitor.wincount %></td>
