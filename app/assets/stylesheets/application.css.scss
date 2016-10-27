@@ -12,25 +12,4 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-// * { outline: 2px solid red }
-nav {
-  padding: 20px 20px;
-  // height: 100px;
-  #logo {
-    // outline: 2px solid blue;
-    height: 150px;
-    margin-top: -25px;
-    margin-left: 100px;
-  }
-
-  #navbar-right {
-    margin-right: 100px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  nav #logo {
-    margin-left: 0px;
-    height: 75px;
-  }
-}
+@import "main";
