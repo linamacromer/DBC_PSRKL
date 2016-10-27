@@ -8,6 +8,29 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+// * { outline: 2px solid red }
+nav {
+  padding: 20px 20px;
+  // height: 100px;
+  #logo {
+    // outline: 2px solid blue;
+    height: 150px;
+    margin-top: -25px;
+    margin-left: 100px;
+  }
+
+  #navbar-right {
+    margin-right: 100px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  nav #logo {
+    margin-left: 0px;
+    height: 75px;
+  }
+}

@@ -9,6 +9,9 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
+# Bootstrap
+gem 'bootstrap-sass'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -53,3 +56,11 @@ group :test do
   gem 'capybara'
   gem 'launchy'
 end
+
+gem 'simplecov', :require => false, :group => :test
+
+# Allows asset pipeline to work on Heroku
+group :production do
+  gem 'rails_12factor'
+end
+
