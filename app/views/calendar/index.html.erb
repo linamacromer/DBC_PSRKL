@@ -12,8 +12,8 @@
     </div>
     <div id="calendar-data">
       <% @matches.each do |match| %>
-        <tr>
-          <td><%= match.start_at %></td>
+        <tr id="match_<%=match.id%>">
+          <td><%= match.start_time %></td>
           <td><%= Competitor.find(match.competitor1_id).name %></td>
           <td><%= Competitor.find(match.competitor2_id).name %></td>
           <td><%= match.location %></td>

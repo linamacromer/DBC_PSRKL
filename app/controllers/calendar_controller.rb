@@ -1,5 +1,5 @@
 class CalendarController < ApplicationController
   def index
-    erb :'/calendar/index'
+    @matches = Match.all
   end
 end
