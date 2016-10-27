@@ -14,9 +14,10 @@
       </tr>
     </thead>
     <tbody>
-      <% if @standings != nil %>
+        <% if @standings.length > 0 %>
         <% @standings.each do |competitor| %>
           <tr scope="row">
+            <% competitor.time_frame = @time %>
             <td><%= competitor.rank %></td>
             <td><%= competitor.name %></td>
             <td><%= competitor.wincount %></td>
