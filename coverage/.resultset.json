@@ -1,38 +1,61 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jwmendio/Desktop/DBC_PSRKL/app/helpers/application_helper.rb": [
+      "/Users/apprentice/Desktop/DBC-Challenges/ClientProject/DBC_PSRKL/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/jwmendio/Desktop/DBC_PSRKL/app/controllers/calendar_controller.rb": [
+      "/Users/apprentice/Desktop/DBC-Challenges/ClientProject/DBC_PSRKL/app/controllers/calendar_controller.rb": [
         1,
         1,
         1,
         null,
         null
       ],
-      "/Users/jwmendio/Desktop/DBC_PSRKL/app/controllers/application_controller.rb": [
+      "/Users/apprentice/Desktop/DBC-Challenges/ClientProject/DBC_PSRKL/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/Users/jwmendio/Desktop/DBC_PSRKL/app/controllers/home_controller.rb": [
+      "/Users/apprentice/Desktop/DBC-Challenges/ClientProject/DBC_PSRKL/app/controllers/competitor_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/DBC-Challenges/ClientProject/DBC_PSRKL/app/controllers/home_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/jwmendio/Desktop/DBC_PSRKL/app/controllers/standings_controller.rb": [
+      "/Users/apprentice/Desktop/DBC-Challenges/ClientProject/DBC_PSRKL/app/controllers/standings_controller.rb": [
         1,
         1,
         2,
         null,
         null
       ],
-      "/Users/jwmendio/Desktop/DBC_PSRKL/app/models/competitor.rb": [
+      "/Users/apprentice/Desktop/DBC-Challenges/ClientProject/DBC_PSRKL/app/models/competitor.rb": [
         1,
         1,
         1,
@@ -69,7 +92,7 @@
         null,
         null
       ],
-      "/Users/jwmendio/Desktop/DBC_PSRKL/app/models/match.rb": [
+      "/Users/apprentice/Desktop/DBC-Challenges/ClientProject/DBC_PSRKL/app/models/match.rb": [
         1,
         1,
         1,
@@ -85,6 +108,6 @@
         null
       ]
     },
-    "timestamp": 1477584042
+    "timestamp": 1477591385
   }
 }

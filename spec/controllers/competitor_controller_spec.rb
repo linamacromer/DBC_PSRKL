@@ -1,0 +1,40 @@
+require 'rails_helper'
+
+RSpec.describe CompetitorController, type: :controller do
+
+  describe "GET #new" do
+    it "returns new success" do
+      get :new
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe "POST #create" do
+
+    context "when valid params are passed" do
+      it "responds with status code 302" do
+        post(:create, { competitor: { name: "John Doe" }})
+        expect(response).to have_http_status(302)
+      end
+
+      it "redirects to the root" do ####FOR NOW!!! CHANGE TO REDIRECT TO ADMIN DASHBOARD
+        post(:create, { competitor: { name: "John Doe" }})
+        expect(response).to redirect_to(root_path)
+      end
+    end
+
+    context "when invalid params are passed" do
+      it "responds with status code 200" do
+        post(:create, { competitor: {title: "John Doe"}})
+        expect(response).to have_http_status 200
+      end
+
+      it "redirects to the new competitor page" do
+        post(:create, { competitor: {title: "John Doe"}})
+        expect(response).to render_template("new")
+      end
+    end
+
+  end
+
+end
