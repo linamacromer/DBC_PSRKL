@@ -18,4 +18,4 @@
 # Ignore coverage pushes
 coverage/
 
-
+.env
