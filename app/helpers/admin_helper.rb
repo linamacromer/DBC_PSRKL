@@ -5,6 +5,7 @@ module AdminHelper
   end
 
   def logged_in?
+    false if session[:logged_in].nil?
     session[:logged_in]
   end
 
