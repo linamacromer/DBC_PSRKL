@@ -58,3 +58,9 @@ group :test do
 end
 
 gem 'simplecov', :require => false, :group => :test
+
+# Allows asset pipeline to work on Heroku
+group :production do
+  gem 'rails_12factor'
+end
+
