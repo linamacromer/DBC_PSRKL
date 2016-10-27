@@ -2,6 +2,13 @@ require 'rails_helper'
 
 RSpec.describe CompetitorsController, type: :controller do
 
+  describe "GET #index" do
+    it "returns index success" do
+      get :index
+      expect(response).to have_http_status(:success)
+    end
+  end
+
   describe "GET #new" do
     it "returns new success" do
       get :new
