@@ -1,4 +1,4 @@
-class CompetitorController < ApplicationController
+class CompetitorsController < ApplicationController
   def new
   end
 
@@ -15,7 +15,7 @@ class CompetitorController < ApplicationController
   private
 
   def competitor_params
-    params.require(:competitor).permit(:name)
+    params.require(:competitors).permit(:name)
   end
 
 end
