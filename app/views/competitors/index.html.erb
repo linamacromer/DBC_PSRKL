@@ -1,7 +1,7 @@
-  <div class="flex-space-between">
+  <div class="competitors-header">
     <h1>Competitors:</h1>
 
-    <%= button_to "Add new competitor", new_competitor_path(@competitors), class: "btn btn-primary" %>
+    <%= link_to "Add new competitor", new_competitor_path(@competitors), class: "btn btn-primary" %>
   </div>
 
   <ul class="list-group competitors-list">

@@ -47,12 +47,16 @@ nav {
   }
 }
 
-.flex-space-between {
+.competitors-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 650px;
   h1 {
     margin-top: 0px;
+  }
+  a {
+    margin-bottom: 12px;
   }
 }
 
