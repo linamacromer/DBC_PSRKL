@@ -1,4 +1,9 @@
 class CompetitorsController < ApplicationController
+
+  def index
+    @competitors = Competitor.all
+  end
+
   def new
   end
 

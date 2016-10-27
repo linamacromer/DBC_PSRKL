@@ -1,0 +1,11 @@
+  <div class="flex-space-between">
+    <h1>Competitors:</h1>
+
+    <%= button_to "Add new competitor", new_competitor_path(@competitors), class: "btn btn-primary" %>
+  </div>
+
+  <ul class="list-group competitors-list">
+    <% @competitors.each do |competitor| %>
+      <li class="list-group-item"><%= competitor.name %></li>
+    <% end %>
+  </ul>

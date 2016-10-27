@@ -26,3 +26,16 @@ nav {
     height: 75px;
   }
 }
+
+.flex-space-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  h1 {
+    margin-top: 0px;
+  }
+}
+
+.competitors-list {
+  width: 400px;
+}
