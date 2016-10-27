@@ -20,7 +20,7 @@ class Competitor < ActiveRecord::Base
     return "#{self.wins.count}/#{self.losses.count}"
   end
 
-  def wincount
+  def wincount()
     self.wins.count
   end
 
@@ -28,8 +28,9 @@ class Competitor < ActiveRecord::Base
     self.losses.count
   end
 
-  def rank
-    Competitor.all.to_a.sort_by(&:wincount).reverse.index(self) + 1
+  def rank(competitor_list)
+    competitor_list.index(self) + 1
   end
+
 
 end

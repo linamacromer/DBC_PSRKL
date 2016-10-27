@@ -10,4 +10,12 @@ class Match < ActiveRecord::Base
     [self.competitor1, self.competitor2]
   end
 
+
+
+  private
+
+  def self.last_week
+    self.where('start_time >= ?', 1.week.ago).map{|x|x.competitors}.flatten.uniq
+  end
+
 end
