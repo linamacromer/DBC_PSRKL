@@ -56,3 +56,5 @@ group :test do
   gem 'capybara'
   gem 'launchy'
 end
+
+gem 'simplecov', :require => false, :group => :test
