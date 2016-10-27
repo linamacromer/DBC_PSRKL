@@ -1,21 +1,26 @@
 <div id='title-container'>
   <h1>Standings</h1>
 </div>
-Sort by:
-<a href="/standings?time=season">Season</a>
-<a href="/standings?time=week">Week</a>
-<a href="/standings?time=month">Month</a>
-<a href="/standings?time=all">All</a>
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle bggrey" type="button" data-toggle="dropdown">Sort by:
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="/standings?time=season">Season</a></li>
+    <li><a href="/standings?time=week">Week</a></li>
+    <li><a href="/standings?time=month">Month</a></li>
+    <li><a href="/standings?time=all">All</a></li>
+  </ul>
+</div>
 <div id='standings-container'>
   <table class="standings table table-hover">
     <thead>
       <tr>
         <th>Rank#</th>
         <th>Name</th>
-        <th>Wins</th>
-        <th>Losses</th>
+        <th class="table-mobile-media">Wins</th>
+        <th class="table-mobile-media">Losses</th>
+        <th class="table-desktop-media">Win/Loss</th>
         <th>Win %</th>
-        <th>Win/Loss</th>
       </tr>
     </thead>
     <tbody>
@@ -25,10 +30,10 @@ Sort by:
             <% competitor.time_frame = @time %>
             <td><%= competitor.rank %></td>
             <td><%= competitor.name %></td>
-            <td><%= competitor.wincount %></td>
-            <td><%= competitor.losscount %></td>
+            <td class="table-mobile-media"><%= competitor.wincount %></td>
+            <td class="table-mobile-media"><%= competitor.losscount %></td>
+            <td class="table-desktop-media"><%= competitor.winloss %></td>
             <td><%= competitor.winpercent %></td>
-            <td><%= competitor.winloss %></td>
           </tr>
         <% end %>
       <% end %>
