@@ -12,11 +12,11 @@ competitor7 = Competitor.create( :name => "Tina L. Templeton" )
 competitor8 = Competitor.create( :name => "Laurinda L. Richey" )
 
 time1 = DateTime.new(2016,10,5,12,00,00)
-time2 = DateTime.new(2016,10,6,12,00,00)
-time3 = DateTime.new(2016,10,7,12,00,00)
-time4 = DateTime.new(2016,10,12,12,00,00)
-time5 = DateTime.new(2016,10,16,12,00,00)
-time6 = DateTime.new(2016,10,25,12,00,00)
+time2 = DateTime.new(2016,11,6,12,00,00)
+time3 = DateTime.new(2016,12,7,12,00,00)
+time4 = DateTime.new(2016,10,30,12,00,00)
+time5 = DateTime.new(2016,11,16,12,00,00)
+time6 = DateTime.new(2016,12,25,12,00,00)
 
 Match.create( :competitor1_id => competitor1.id, :competitor2_id => competitor2.id, :start_time => time1, :season => 1, :location => "Basketball Court", :winner_id => competitor1.id, :loser_id => competitor2.id )
 Match.create( :competitor1_id => competitor3.id, :competitor2_id => competitor4.id, :start_time => time2, :season => 1, :location => "Basketball Court",:winner_id => competitor4.id, :loser_id => competitor3.id )
@@ -25,3 +25,4 @@ Match.create( :competitor1_id => competitor7.id, :competitor2_id => competitor8.
 Match.create( :competitor1_id => competitor1.id, :competitor2_id => competitor6.id, :start_time => time5, :season => 1, :location => "Basketball Court", :winner_id => competitor1.id, :loser_id => competitor6.id )
 Match.create( :competitor1_id => competitor6.id, :competitor2_id => competitor8.id, :start_time => time6, :season => 1, :location => "Basketball Court", :winner_id => competitor6.id, :loser_id => competitor8.id )
 Match.create( :competitor1_id => competitor6.id, :competitor2_id => competitor2.id, :start_time => time6, :season => 1, :location => "Basketball Court", :winner_id => competitor6.id, :loser_id => competitor2.id )
+
