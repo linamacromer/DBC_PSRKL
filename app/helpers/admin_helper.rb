@@ -12,4 +12,8 @@ module AdminHelper
   def logout
     session[:logged_in] = false
   end
+
+  def authenticate(password)
+    ENV["ADMIN_PASSWORD"] == password
+  end
 end

@@ -33,4 +33,14 @@ RSpec.describe AdminHelper, type: :helper do
       expect(session[:logged_in]).to eq false
     end
   end
+
+  describe "authenticate" do
+    it 'authenticates if password is valid' do
+
+    end
+
+    it 'fails to authenticate if password is invalid' do
+
+    end
+  end
 end
