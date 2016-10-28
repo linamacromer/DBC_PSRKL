@@ -7,6 +7,11 @@ RSpec.describe CompetitorsController, type: :controller do
       get :index
       expect(response).to have_http_status(:success)
     end
+
+    it "routes GET /admin/competitors to authenticate#login_form" do
+      get :index
+      expect(response).to redirect_to(login_path)
+    end
   end
 
   describe "GET #new" do

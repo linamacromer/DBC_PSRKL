@@ -9,10 +9,11 @@ DBCPsrkl::Application.routes.draw do
   resources :admin, only: [:index]
 
   scope 'admin' do
-    get "/login", to: "admin#login_form"
-    post "/login", to: "admin#login"
-    get "/logout", to: "admin#logout"
+    get "/login", to: "authenticate#login_form"
+    post "/login", to: "authenticate#login"
+    get "/logout", to: "authenticate#logout"
     resources :competitors, only: [:new, :create, :index]
   end
 
 end
+

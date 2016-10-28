@@ -16,4 +16,5 @@ module AdminHelper
   def authenticate(password)
     ENV["ADMIN_PASSWORD"] == password
   end
+
 end
