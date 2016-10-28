@@ -41,6 +41,5 @@ RSpec.describe Round, type: :model do
       expect(round.save).to be false
     end
 
-
   end
 end
