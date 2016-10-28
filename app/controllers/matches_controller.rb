@@ -4,4 +4,8 @@ class MatchesController < AdminController
     @matches = Match.all.order(:start_time)
     render :index
   end
+
+  def edit
+    @match = Match.find(params[:id])
+  end
 end
