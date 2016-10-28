@@ -1,19 +1,19 @@
 module AdminHelper
 
-  def login
+  def admin_login
     session[:logged_in] = true
   end
 
-  def logged_in?
+  def admin_logged_in?
     false if session[:logged_in].nil?
     session[:logged_in]
   end
 
-  def logout
+  def admin_logout
     session[:logged_in] = false
   end
 
-  def authenticate(password)
+  def admin_authenticate(password)
     ENV["ADMIN_PASSWORD"] == password
   end
 

@@ -11,36 +11,36 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe AdminHelper, type: :helper do
-  describe "login" do
+  describe "admin_login" do
     before(:each) do
       expect(session[:logged_in]).to eq nil
-      helper.login
+      helper.admin_login
     end
 
     it "logs the administrator in" do
       expect(session[:logged_in]).to eq true
     end
 
-    it "makes logged_in? return true" do
-      expect(helper.logged_in?).to eq true
+    it "makes admin_logged_in? return true" do
+      expect(helper.admin_logged_in?).to eq true
     end
   end
 
-  describe "logout" do
+  describe "admin_logout" do
     it "logs the administrator out" do
       session[:logged_in] = true
-      helper.logout
+      helper.admin_logout
       expect(session[:logged_in]).to eq false
     end
   end
 
-  describe "authenticate" do
+  describe "admin_authenticate" do
     it 'authenticates if password is valid' do
-      expect(authenticate(ENV["ADMIN_PASSWORD"])).to eq(true)
+      expect(helper.admin_authenticate(ENV["ADMIN_PASSWORD"])).to eq(true)
     end
 
     it 'fails to authenticate if password is invalid' do
-      expect(authenticate("passworf")).to eq(false)
+      expect(helper.admin_authenticate("passworf")).to eq(false)
     end
   end
 end

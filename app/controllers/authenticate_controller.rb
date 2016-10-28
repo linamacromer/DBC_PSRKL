@@ -3,7 +3,7 @@ class AuthenticateController < ApplicationController
 
   # Get request
   def login_form
-    unless logged_in?
+    unless admin_logged_in?
       render :login
     else
       redirect_to admin_index_path
@@ -12,12 +12,12 @@ class AuthenticateController < ApplicationController
 
   # Post request
   def login
-    login
+    admin_login
     redirect_to admin_index_path
   end
 
   def logout
-    logout
+    admin_logout
     redirect_to root_path
   end
 end
