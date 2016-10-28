@@ -9,7 +9,7 @@ RSpec.describe AdminController, type: :controller do
       @request.session[:logged_in] = true
     end
 
-    describe 'admin#login' do
+    describe 'admin#login_form' do
       it "redirects to admin#index" do
         get :login
         expect(response).to redirect_to(admin_index_path)
@@ -28,20 +28,20 @@ RSpec.describe AdminController, type: :controller do
       @request.session[:logged_in] = false
     end
 
-    it "routes GET /admin to admin#login" do
-      expect(:get => "/admin").to route_to("admin#login")
+    it "routes GET /admin to admin#login_form" do
+      expect(:get => "/admin").to route_to("admin#login_form")
     end
 
-    it "routes GET /admin/login to admin#login" do
-      expect(:get => '/admin/login').to route_to("admin#login")
+    it "routes GET /admin/login to admin#login_form" do
+      expect(:get => '/admin/login').to route_to("admin#login_form")
     end
 
-    it "routes GET /admin/competitors to admin#login" do
-      expect(:get => "/admin/competitors").to route_to("admin#login")
+    it "routes GET /admin/competitors to admin#login_form" do
+      expect(:get => "/admin/competitors").to route_to("admin#login_form")
     end
 
-    it "routes GET /admin/matches to admin#login" do
-      expect(:get => "/admin/matches").to route_to("admin#login")
+    it "routes GET /admin/matches to admin#login_form" do
+      expect(:get => "/admin/matches").to route_to("admin#login_form")
     end
   end
 end

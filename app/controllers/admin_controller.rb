@@ -13,8 +13,13 @@ class AdminController < ApplicationController
     render :index
   end
 
-  def login
+  # Get request
+  def login_form
     render :login
+  end
+
+  # Post request
+  def login
   end
 
 end
