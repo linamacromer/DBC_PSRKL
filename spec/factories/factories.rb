@@ -4,7 +4,7 @@ FactoryGirl.define do
   end
 
   factory :match do
-    start_time { rand(1..100).days.from_now }
+    start_time { rand(2..100).days.from_now }
 
     location "Basketball Court"
     season 1
@@ -14,7 +14,7 @@ FactoryGirl.define do
     factory :completed_match do
       winner { competitor1 }
       loser { competitor2 }
-      start_time 1.days.ago
+      start_time 1.days.from_now
     end
 
     factory :future_match do

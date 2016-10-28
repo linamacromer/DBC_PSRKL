@@ -13,6 +13,7 @@ DBCPsrkl::Application.routes.draw do
     post "/login", to: "authenticate#login"
     get "/logout", to: "authenticate#logout"
     resources :competitors, only: [:new, :create, :index]
+    resources :matches, only: [:new, :create]
   end
 
 end

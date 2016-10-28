@@ -7,6 +7,19 @@ class Match < ActiveRecord::Base
   validates_presence_of :competitor1, :competitor2, :start_time, :season, :location
   validate :unique_competitors
   validate :unique_day
+  validate :future_date
+
+  def start_time_string
+    self.start_time.localtime.to_s
+  end
+
+  def start_time_string=(input)
+    begin
+      self.start_time= input.to_datetime.utc
+    rescue
+      self.start_time= nil
+    end
+  end
 
   def competitors
     [self.competitor1, self.competitor2]
@@ -42,12 +55,21 @@ class Match < ActiveRecord::Base
 
   def unique_day
     if Match.all.where("DATE(start_time) = ?", self.start_time).count > 0
-      errors.add(:start_time, "Match already exists for #{self.start_time}")
+      errors.add(:start_time, "match already exists for #{self.start_time}")
     end
   end
 
   def unique_competitors
     errors.add(:competitor1, "competitors must be different") if competitor1 == competitor2
   end
+
+  def future_date
+    if start_time
+      if start_time < Date.today
+        errors.add(:start_time, "must be in the future")
+      end
+    end
+  end
+
 
 end

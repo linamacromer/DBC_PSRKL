@@ -1,0 +1,20 @@
+<h1>Add new match:</h1>
+
+<%= form_for :matches, :url => matches_path do |f| %>
+<div class="form-group">
+  <%= f.hidden_field :location, :value => "Basketball Court" %>
+  <%= f.hidden_field :season, :value => "1" %>
+
+  <%= f.label :start_time_string,'Start' %>:
+  <%= f.datetime_local_field :start_time_string, class: "form-control" %>
+<br>
+  <%= f.label :competitor %>:
+  <%= f.collection_select :competitor1_id, @competitors.all, :id, :name, prompt: true, class: "form-control" %>
+<br>
+  <%= f.label :competitor %>:
+  <%= f.collection_select :competitor2_id, @competitors.all, :id, :name, prompt: true, class: "form-control" %>
+<br>
+</div>
+
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
