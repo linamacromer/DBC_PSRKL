@@ -3,7 +3,11 @@ class AuthenticateController < ApplicationController
 
   # Get request
   def login_form
-    render :login
+    unless logged_in?
+      render :login
+    else
+      redirect_to admin_index_path
+    end
   end
 
   # Post request
