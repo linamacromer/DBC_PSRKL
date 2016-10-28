@@ -2,17 +2,18 @@ div.logout {
   display: inline-block;
 }
 
-#logout {
-  background-color: #A82231;
-}
-
 .welcome-admin{
   width: 80%;
   display: inline-block;
 }
 
-#bicycle-horn {
-  background-color: #00FF38;
-  margin-top: 3em;
-  font-size: 4em;
+#horn {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+#horn:hover {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
 }
