@@ -21,8 +21,8 @@ RSpec.describe Round, type: :model do
     end
 
     it 'has many matches' do
-        expect(round.matches).to all(be_a Match)
-      end
+      expect(round.matches).to all(be_a Match)
+    end
 
   end
 
@@ -35,5 +35,12 @@ RSpec.describe Round, type: :model do
       round.title = nil
       expect(round.save).to be false
     end
+
+    it 'does not allow if title is not unique' do
+      Round.create(title: "semifinals")
+      expect(round.save).to be false
+    end
+
+
   end
 end
