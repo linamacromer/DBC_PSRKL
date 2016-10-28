@@ -1,0 +1,10 @@
+<h1>Login:</h1>
+
+<%= form_for :admin, :url => login_path do |f| %>
+<div class="form-group">
+  <%= f.label :password %>:
+  <%= f.text_field :password, class: "form-control" %>
+</div>
+
+  <%= f.submit "Submit", class: "btn btn-primary btn-lg active" %>
+<% end %>

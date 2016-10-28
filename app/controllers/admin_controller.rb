@@ -1,11 +1,11 @@
 class AdminController < ApplicationController
   include AdminHelper
-
   before_action :admin_authenticate
+  skip_before_action :admin_authenticate, only: :login
 
   def admin_authenticate
     unless logged_in?
-      redirect login_path
+      redirect_to login_path
     end
   end
 
@@ -14,6 +14,7 @@ class AdminController < ApplicationController
   end
 
   def login
+    render :login
   end
 
 end

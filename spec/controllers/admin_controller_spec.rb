@@ -43,6 +43,5 @@ RSpec.describe AdminController, type: :controller do
     it "routes GET /admin/matches to admin#login" do
       expect(:get => "/admin/matches").to route_to("admin#login")
     end
-
   end
 end
