@@ -10,6 +10,8 @@ class MatchesController < AdminController
     if @match.save
       redirect_to calendar_index_path
     else
+      @errors = @match.errors.full_messages
+      @competitors = Competitor.all
       render 'new'
     end
   end

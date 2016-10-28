@@ -50,7 +50,7 @@ describe Match, type: :model do
       time = match1.start_time
       match2 = build(:match, start_time: time)
       match2.valid?
-      match2.errors.messages[:start_time].to_s.should include("match already exists for")
+      match2.errors.messages[:start_time].to_s.should include("match already exists for date")
     end
 
     it 'validates that competitors are unique' do

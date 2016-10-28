@@ -10,7 +10,7 @@ class Match < ActiveRecord::Base
   validate :future_date
 
   def start_time_string
-    self.start_time.localtime.to_s
+    self.start_time.strftime('%FT%T')
   end
 
   def start_time_string=(input)
@@ -55,7 +55,7 @@ class Match < ActiveRecord::Base
 
   def unique_day
     if Match.all.where("DATE(start_time) = ?", self.start_time).count > 0
-      errors.add(:start_time, "match already exists for #{self.start_time}")
+      errors.add(:start_time, "match already exists for date")
     end
   end
 
