@@ -12,7 +12,7 @@
     </ul>
   </div>
   <div id ='match-calendar'>
-    <table class="table table-hover"
+    <table class="table table-hover">
       <div id="calendar-header">
         <tr>
           <th class="calendar-date">Date</th>
@@ -30,7 +30,7 @@
               <td class="calendar-competitor1-name"><%= Competitor.find(match.competitor1_id).name %></td>
               <td class="calendar-competitor2-name"><%= Competitor.find(match.competitor2_id).name %></td>
               <td class="calendar-location"><%= match.location %></td>
-<!--               <td class="calendar-weather"><%#= convert_to_timestamp(match.start_time) %></td> -->
+              <td class="calendar-weather"><%= convert_to_timestamp(match.start_time) %></td>
             </tr>
           <% end %>
         <% end %>
