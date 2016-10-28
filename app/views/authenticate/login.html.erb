@@ -1,0 +1,16 @@
+<h1>Login:</h1>
+
+<% if @errors %>
+  <div class="error">
+    <h3><%= @errors.first %></h3>
+  </div>
+<% end %>
+
+<%= form_for :admin, :url => login_path do |f| %>
+<div class="form-group">
+  <%= f.label :password %>:
+  <%= f.text_field :password, type: "password", class: "form-control" %>
+</div>
+
+  <%= f.submit "Submit", class: "btn btn-primary btn-lg active" %>
+<% end %>

@@ -2,23 +2,17 @@ require 'rails_helper'
 
 RSpec.describe AdminController, type: :controller do
 
-  describe 'admin#index' do
-    it 'loads the dashboard page' do
-      expect(get :index).to render_template :index
-    end
-  end
 
   context 'when admin is logged in' do
-
-    # Fake pending test to remind us to return
-    xit 'does the routing with the right authentication'
     # When we figure out security we can make this more specific
     before(:each) do
       @request.session[:logged_in] = true
     end
 
-    xit "redirects from /admin/login to admin#index" do
-      expect(get :login)
+    describe 'admin#index' do
+      it 'loads the dashboard page' do
+        expect(get :index).to render_template :index
+      end
     end
   end
 
@@ -27,18 +21,14 @@ RSpec.describe AdminController, type: :controller do
       @request.session[:logged_in] = false
     end
 
-    xit "routes GET /admin to admin#login" do
-      expect(:get => "/admin").to route_to("admin#login")
+    it "routes GET /admin to admin#login_form" do
+      get :index
+      expect(response).to redirect_to(login_path)
     end
 
-    xit "routes GET /admin/login to admin#login" do
-      expect(:get => '/admin/login').to route_to("admin#login")
+# This will go into matches
+    xit "routes GET /admin/matches to authenticate#login_form" do
+      expect(response).to redirect_to(login_path)
     end
-
-    # When you do admin competitors routes, add the rest here
-    xit "routes GET /admin/competitors to admin#login" do
-      expect(:get => "/admin/competitors").to route_to("admin#login")
-    end
-
   end
 end
