@@ -14,6 +14,14 @@ describe Match, type: :model do
     it { should validate_presence_of(:start_time) }
     it { should validate_presence_of(:season) }
     it { should validate_presence_of(:location) }
+
+    it 'validates that there can only be one match a day' do
+      time = match1.start_time
+      match2 = build(:match, start_time: time)
+      match2.valid?
+      match2.errors.messages[:start_time].to_s.should include("Match already exists for")
+    end
+
     it 'validates that competitors are unique' do
       failed_match = build(:match, competitor1: competitor1, competitor2: competitor1)
       failed_match.valid?
