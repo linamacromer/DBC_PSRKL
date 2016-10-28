@@ -20,7 +20,6 @@ time2 = DateTime.new(2016,11,6,12,00,00)
 time3 = DateTime.new(2016,12,7,12,00,00)
 time4 = DateTime.new(2016,10,30,12,00,00)
 time5 = DateTime.new(2016,11,16,12,00,00)
-<<<<<<< HEAD
 time6 = DateTime.new(2016,12,25,12,00,00)
 time7 = DateTime.new(2016,10,28,12,00,00)
 time8 = DateTime.new(2016,10,7,12,00,00)
@@ -30,13 +29,6 @@ time11 = DateTime.new(2016,10,16,12,00,00)
 time12 = DateTime.new(2016,10,14,12,00,00)
 time13 = DateTime.new(2016,10,22,12,00,00)
 time14 = DateTime.new(2016,10,9,12,00,00)
-=======
-time6 = DateTime.new(2016,11,25,12,00,00)
-time7 = DateTime.new(2016,11,28,12,00,00)
-time8 = DateTime.new(2016,11,18,12,00,00)
-time9 = DateTime.new(2016,11,13,12,00,00)
-time10 = DateTime.new(2016,10,30,12,00,00)
->>>>>>> master
 
 Match.create( :competitor1_id => competitor1.id, :competitor2_id => competitor2.id, :start_time => time1, :season => 1, :location => "Basketball Court", :winner_id => competitor1.id, :loser_id => competitor2.id )
 Match.create( :competitor1_id => competitor3.id, :competitor2_id => competitor4.id, :start_time => time2, :season => 1, :location => "Basketball Court",:winner_id => competitor4.id, :loser_id => competitor3.id )
