@@ -11,7 +11,7 @@ module WeatherHelper
     if @summary == nil
       return "TBD"
     else
-      "#{@summary * 100}%"
+      "#{(@summary * 100).floor}%"
     end
   end
 end
