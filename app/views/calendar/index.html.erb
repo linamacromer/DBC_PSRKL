@@ -19,6 +19,7 @@
           <th class="calendar-competitor1-name">Competitor 1 Name</th>
           <th class="calendar-competitor2-name">Competitor 2 Name</th>
           <th class="calendar-location">Location</th>
+          <th class="calendar-weather">Weather</th>
         </tr>
       </div>
       <div id="calendar-data">
@@ -29,6 +30,7 @@
               <td class="calendar-competitor1-name"><%= Competitor.find(match.competitor1_id).name %></td>
               <td class="calendar-competitor2-name"><%= Competitor.find(match.competitor2_id).name %></td>
               <td class="calendar-location"><%= match.location %></td>
+              <td class="calendar-weather"><%=  %></td>
             </tr>
           <% end %>
         <% end %>

@@ -7,6 +7,12 @@ class CalendarController < ApplicationController
     else
       @matches = Match.all.order(:start_time)
     end
+
+    # weather request
+    response = HTTParty.get('https://api.darksky.net/forecast/7285a7f0703bd521ebf583910b025edd/47.6062,-122.3321')
+    data = JSON.parse(response.body)
+
+    puts response.body, response.code, response.message, response.headers.inspect
   end
 
   private

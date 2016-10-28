@@ -65,3 +65,5 @@ group :production do
   gem 'rails_12factor'
 end
 
+# Use httparty to make API request
+gem "httparty"
