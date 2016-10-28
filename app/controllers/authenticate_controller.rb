@@ -12,7 +12,7 @@ class AuthenticateController < ApplicationController
 
   # Post request
   def login
-    if admin_authenticate(login_params)
+    if admin_authenticate(login_params[:password])
       admin_login
       redirect_to admin_index_path
     else
@@ -24,10 +24,10 @@ class AuthenticateController < ApplicationController
     admin_logout
     redirect_to root_path
   end
-    
-    
+
+
     private
     def login_params
-      params.require(:password).permit(:password)
+      params.require(:admin).permit(:password)
     end
 end

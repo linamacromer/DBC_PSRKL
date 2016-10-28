@@ -18,7 +18,7 @@ RSpec.describe AuthenticateController, type: :controller do
     describe 'authenticate#login' do
         context 'incorrect password' do
         	before(:each) do
-        		post :login, {password: "passworf"}
+        		post :login, admin: {password: "passworf"}
         	end
 
         	it 'does not log in' do
@@ -29,10 +29,10 @@ RSpec.describe AuthenticateController, type: :controller do
         		expect(response).to redirect_to login_path
         	end
         end
-        
+
         context 'correct password' do
         	before(:each) do
-        		post :login, {password: ENV["ADMIN_PASSWORD"]}
+        		post :login, admin: {password: ENV["ADMIN_PASSWORD"]}
         	end
         	 it 'logs in' do
         		expect(@request.session[:logged_in]).to be true

@@ -48,6 +48,8 @@ end
 # gem 'debugger', group: [:development, :test]
 
 group :development, :test do
+  # Allows environment variables to be defined
+  gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.5'
 end
 
