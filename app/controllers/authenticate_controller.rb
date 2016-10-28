@@ -12,12 +12,22 @@ class AuthenticateController < ApplicationController
 
   # Post request
   def login
-    admin_login
-    redirect_to admin_index_path
+    if admin_authenticate(login_params)
+      admin_login
+      redirect_to admin_index_path
+    else
+      redirect_to login_path
+    end
   end
 
   def logout
     admin_logout
     redirect_to root_path
   end
+    
+    
+    private
+    def login_params
+      params.require(:password).permit(:password)
+    end
 end
