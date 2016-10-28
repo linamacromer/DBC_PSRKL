@@ -8,7 +8,7 @@ class Match < ActiveRecord::Base
   validates_presence_of :competitor1, :competitor2, :start_time, :season, :location
   validate :unique_competitors
   validate :unique_day
-  validate :future_date
+  # validate :future_date
 
   def start_time_string
     self.start_time.strftime('%FT%T')

@@ -16,13 +16,15 @@
       <div id="calendar-data">
         <% @matches.each do |match| %>
           <% if ((match.winner_id == nil) || (match.loser_id == nil)) %>
-           <td class="calendar-date"><%= (match.start_time).strftime("%B %d, %Y") %></td>
-            <td class="calendar-time"><%= (match.start_time).strftime("%I:%M%p") %></td>
-            <td class="calendar-competitor1-name"><%= Competitor.find(match.competitor1_id).name %></td>
-            <td class="calendar-competitor2-name"><%= Competitor.find(match.competitor2_id).name %></td>
-            <td class="calendar-location"><%= match.location %></td>
-            <td class="calendar-weather"><%= convert_to_timestamp(match.start_time) %></td>
-            <td><%= button_to "Edit", edit_match_path(id: match.id), :method => "get", :class => "btn btn-primary dropdown-toggle bggrey" %></td>
+            <tr>
+             <td class="calendar-date"><%= (match.start_time).strftime("%B %d, %Y") %></td>
+              <td class="calendar-time"><%= (match.start_time).strftime("%I:%M%p") %></td>
+              <td class="calendar-competitor1-name"><%= Competitor.find(match.competitor1_id).name %></td>
+              <td class="calendar-competitor2-name"><%= Competitor.find(match.competitor2_id).name %></td>
+              <td class="calendar-location"><%= match.location %></td>
+              <td class="calendar-weather"><%= convert_to_timestamp(match.start_time) %></td>
+              <td><%= button_to "Edit", edit_match_path(id: match.id), :method => "get", :class => "btn btn-primary dropdown-toggle bggrey" %></td>
+            </tr>
           <% end %>
         <% end %>
       </div>
