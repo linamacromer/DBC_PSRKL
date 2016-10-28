@@ -25,8 +25,12 @@ RSpec.describe AuthenticateController, type: :controller do
         		expect(@request.session[:logged_in]).to be_falsey
         	end
 
-        	it 'redirects to the login page' do
-        		expect(response).to redirect_to login_path
+          it 'passes an error' do
+            expect(assigns(:errors)).to eq(["Incorrect password"])
+          end
+
+        	it 'reloads login page' do
+        		expect(response).to render_template :login
         	end
         end
 
@@ -34,6 +38,7 @@ RSpec.describe AuthenticateController, type: :controller do
         	before(:each) do
         		post :login, admin: {password: ENV["ADMIN_PASSWORD"]}
         	end
+
         	 it 'logs in' do
         		expect(@request.session[:logged_in]).to be true
         	end

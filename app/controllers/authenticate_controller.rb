@@ -16,7 +16,8 @@ class AuthenticateController < ApplicationController
       admin_login
       redirect_to admin_index_path
     else
-      redirect_to login_path
+      @errors = ["Incorrect password"]
+      render :login
     end
   end
 
