@@ -1,4 +1,4 @@
-class CompetitorsController < ApplicationController
+class CompetitorsController < AdminController
 
   def index
     @competitors = Competitor.all
