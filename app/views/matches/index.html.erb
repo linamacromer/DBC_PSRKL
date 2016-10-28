@@ -1,0 +1,31 @@
+<h1>Commissioner's View of Matches</h1>
+  <%= button_to "Add New Match", matches_path, :method => "get", :class => "btn btn-primary dropdown-toggle bggrey" %>
+  <div id ='match-calendar'>
+    <table class="table table-hover">
+      <div id="calendar-header">
+        <tr>
+          <th class="calendar-date">Date</th>
+          <th class="calendar-time">Time</th>
+          <th class="calendar-competitor1-name">Competitor 1 Name</th>
+          <th class="calendar-competitor2-name">Competitor 2 Name</th>
+          <th class="calendar-location">Location</th>
+          <th class="calendar-weather">Chance of Rain</th>
+          <th>Edit Match</th>
+        </tr>
+      </div>
+      <div id="calendar-data">
+        <% @matches.each do |match| %>
+          <tr id="match_<%=match.id%>">
+            <td class="calendar-date"><%= (match.start_time).strftime("%B %d, %Y") %></td>
+            <td class="calendar-time"><%= (match.start_time).strftime("%I:%M%p") %></td>
+            <td class="calendar-competitor1-name"><%= Competitor.find(match.competitor1_id).name %></td>
+            <td class="calendar-competitor2-name"><%= Competitor.find(match.competitor2_id).name %></td>
+            <td class="calendar-location"><%= match.location %></td>
+            <td>%</td>
+            <td><%= button_to "Edit", edit_match_path(id: match.id), :method => "get", :class => "btn btn-primary dropdown-toggle bggrey" %></td>
+          </tr>
+        <% end %>
+      </div>
+    </table>
+  </div>
+</div>
