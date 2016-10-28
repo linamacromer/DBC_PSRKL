@@ -1,10 +1,14 @@
-require "Date"
+require "date"
+require "httparty"
+require "time"
 
-DateTime.rfc3339('2015-05-27T07:39:59Z')
-#=> #<DateTime: 2015-05-27T07:39:59+00:00 ((2457170j,27599s,0n),+0s,2299161j)>
+module WeatherHelper
 
-DateTime.rfc3339('2015-05-27T07:39:59Z').to_time
-#=> 2015-05-27 09:39:59 +0200
+  def convert_to_timestamp(date)
+    timestamp = Time.parse(date.to_s).to_i
+    response = HTTParty.get("https://api.darksky.net/forecast/7285a7f0703bd521ebf583910b025edd/47.6062,-122.3321,#{timestamp}")
+    data = JSON.parse(response.body)
+    @summary = data["daily"]["data"][0]["summary"]
+  end
 
-DateTime.rfc3339('2015-05-27T07:39:59Z').to_time.to_i
-#=> 1432712399
+end
