@@ -1,6 +1,6 @@
 module AdminHelper
 
-  def login()
+  def login
     session[:logged_in] = true
   end
 

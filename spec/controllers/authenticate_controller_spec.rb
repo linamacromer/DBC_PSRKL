@@ -14,4 +14,20 @@ RSpec.describe AuthenticateController, type: :controller do
         expect(response).to render_template(:login)
       end
     end
+
+    describe 'admin#login' do
+    end
+
+    describe 'admin#logout' do
+      it 'redirects to main site index' do
+        expect(response).to redirect_to(root_path)
+      end
+
+      it 'removes logged_in session variable' do
+        @request.session[:logged_in] = true
+        get :logout
+        expect(@request.session[:logged_in]).to eq nil
+      end
+    end
+
 end
