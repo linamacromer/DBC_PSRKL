@@ -1,5 +1,5 @@
 <header><h2 class="welcome-admin">Welcome, Commissioner Rutherford!</h2>
-<div class="logout"><button id="logout" type="button" class="btn btn-danger">Logout</button></div></header>
+<div class="logout"><a class="btn btn-primary" href="/admin/logout">Logout</a></div></header>
 
 <main>
   <ul id="admin-menu">
@@ -9,6 +9,6 @@
   </ul>
 
   <%= audio_tag "BikeHorn.mp3", class: "audio-play", type: "audio/mp3" %>
-  <button id="bicycle-horn" type="button" class="btn btn-success audioButton btn-lg btn-block">HONK</button>
+  	<img src="/assets/horn.png" id="horn" class="audioButton"/>
 
 </main>
