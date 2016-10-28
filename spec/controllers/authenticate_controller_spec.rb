@@ -16,6 +16,32 @@ RSpec.describe AuthenticateController, type: :controller do
     end
 
     describe 'authenticate#login' do
+        context 'incorrect password' do
+        	before(:each) do
+        		post :login, {password: "passworf"}
+        	end
+
+        	it 'does not log in' do
+        		expect(@request.session[:logged_in]).to be_falsey
+        	end
+
+        	it 'redirects to the login page' do
+        		expect(response).to redirect_to login_path
+        	end
+        end
+        
+        context 'correct password' do
+        	before(:each) do
+        		post :login, {password: ENV["ADMIN_PASSWORD"]}
+        	end
+        	 it 'logs in' do
+        		expect(@request.session[:logged_in]).to be true
+        	end
+
+        	it 'redirects to the index page' do
+        		expect(response).to redirect_to admin_index_path
+        	end
+        end
     end
 
     describe 'authenticate#logout' do
