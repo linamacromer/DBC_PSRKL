@@ -8,8 +8,8 @@ describe "users can see the calendar" do
   let!(:matches){ [
     Match.create( :competitor1_id => competitor1.id, :competitor2_id => competitor2.id, :start_time => 10.days.from_now, :season => 1, :location => "Basketball Court" ),
     Match.create( :competitor1_id => competitor1.id, :competitor2_id => competitor3.id, :start_time => 11.days.from_now, :season => 1, :location => "Basketball Court" ),
-    Match.create( :competitor1_id => competitor2.id, :competitor2_id => competitor3.id, :start_time => 12.days.from_now, :season => 1, :location => "Basketball Court" )]
-  }
+    Match.create( :competitor1_id => competitor2.id, :competitor2_id => competitor3.id, :start_time => 12.days.from_now, :season => 1, :location => "Basketball Court" ),
+  ]}
 
   it "displays date header" do
     @matches = matches

@@ -16,8 +16,8 @@ feature "admin can see the matches" do
     let!(:matches){ [
       Match.create( :competitor1_id => competitor1.id, :competitor2_id => competitor2.id, :start_time => 1.days.ago, :season => 1, :location => "Basketball Court" ),
       Match.create( :competitor1_id => competitor1.id, :competitor2_id => competitor3.id, :start_time => 2.days.ago, :season => 1, :location => "Basketball Court" ),
-      Match.create( :competitor1_id => competitor2.id, :competitor2_id => competitor3.id, :start_time => 3.days.ago, :season => 1, :location => "Basketball Court" )]
-    }
+      Match.create( :competitor1_id => competitor2.id, :competitor2_id => competitor3.id, :start_time => 3.days.ago, :season => 1, :location => "Basketball Court" ),
+    ]}
     scenario "the admin can see the edit button" do
       visit '/admin/matches'
       expect(page).to have_button("Edit")
