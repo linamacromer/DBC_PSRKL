@@ -4,7 +4,7 @@ FactoryGirl.define do
   end
 
   factory :match do
-    start_time Time.now
+    start_time { rand(1..100).days.from_now }
 
     location "Basketball Court"
     season 1

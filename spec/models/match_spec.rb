@@ -14,6 +14,11 @@ describe Match, type: :model do
     it { should validate_presence_of(:start_time) }
     it { should validate_presence_of(:season) }
     it { should validate_presence_of(:location) }
+    it 'validates that competitors are unique' do
+      failed_match = build(:match, competitor1: competitor1, competitor2: competitor1)
+      failed_match.valid?
+      failed_match.errors.messages[:competitor1].should eq ["competitors must be different"]
+    end
   end
 
   describe "Associations" do

@@ -5,6 +5,7 @@ class Match < ActiveRecord::Base
   belongs_to :loser, class_name: "Competitor"
 
   validates_presence_of :competitor1, :competitor2, :start_time, :season, :location
+  validate :unique_competitors
   validate :unique_day
 
   def competitors
@@ -43,6 +44,10 @@ class Match < ActiveRecord::Base
     if Match.all.where("DATE(start_time) = ?", self.start_time).count > 0
       errors.add(:start_time, "Match already exists for #{self.start_time}")
     end
+  end
+
+  def unique_competitors
+    errors.add(:competitor1, "competitors must be different") if competitor1 == competitor2
   end
 
 end
