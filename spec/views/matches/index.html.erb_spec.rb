@@ -8,7 +8,8 @@ describe "admin can see the matches" do
   let!(:matches){ [
     Match.create( :competitor1_id => competitor1.id, :competitor2_id => competitor2.id, :start_time => 10.days.from_now, :season => 1, :location => "Basketball Court" ),
     Match.create( :competitor1_id => competitor1.id, :competitor2_id => competitor3.id, :start_time => 11.days.from_now, :season => 1, :location => "Basketball Court" ),
-    Match.create( :competitor1_id => competitor2.id, :competitor2_id => competitor3.id, :start_time => 12.days.from_now, :season => 1, :location => "Basketball Court" )]
+    Match.create( :competitor1_id => competitor2.id, :competitor2_id => competitor3.id, :start_time => 12.days.from_now, :season => 1, :location => "Basketball Court" ),
+    Match.create( :competitor1_id => competitor1.id, :competitor2_id => competitor2.id, :start_time => 1.days.ago, :season => 1, :location => "Basketball Court", :winner_id => competitor1.id, :loser_id => competitor2.id)]
   }
 
   before(:each) do
@@ -45,5 +46,9 @@ describe "admin can see the matches" do
 
   it "displays the weather" do
     rendered.should match(/calendar-weather/)
+  end
+
+  it "does not display the match with winner or loser" do
+    rendered.should_not include("match_" + matches.last.id.to_s)
   end
 end

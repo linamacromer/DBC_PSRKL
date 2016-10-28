@@ -1,8 +1,5 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-require 'factory_girl_rails'
-
 competitor1 = Competitor.create( :name => "Kerry J. Lawrence" )
 competitor2 = Competitor.create( :name => "Sherita T. Johnson" )
 competitor3 = Competitor.create( :name => "Anita K. Robertson" )
