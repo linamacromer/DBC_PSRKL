@@ -2,10 +2,20 @@ require 'rails_helper'
 
 RSpec.describe CompetitorsController, type: :controller do
 
+  before(:each) do
+    @request.session[:logged_in] = true
+  end
+
   describe "GET #index" do
-    it "returns index success" do
+    it "returns index success if logged in" do
       get :index
       expect(response).to have_http_status(:success)
+    end
+
+    it "redirects authenticate#login_form if not logged in" do
+      @request.session[:logged_in] = false
+      get :index
+      expect(response).to redirect_to(login_path)
     end
   end
 
