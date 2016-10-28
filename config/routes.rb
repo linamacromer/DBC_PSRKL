@@ -10,6 +10,7 @@ DBCPsrkl::Application.routes.draw do
 
   scope 'admin' do
     resources :competitors, only: [:new, :create, :index]
+    resources :matches
   end
 
 end
