@@ -23,7 +23,9 @@
               <td class="calendar-competitor2-name"><%= Competitor.find(match.competitor2_id).name %></td>
               <td class="calendar-location"><%= match.location %></td>
               <td class="calendar-weather"><%= convert_to_timestamp(match.start_time) %></td>
-              <td><%= button_to "Edit", edit_match_path(id: match.id), :method => "get", :class => "btn btn-primary dropdown-toggle bggrey" %></td>
+              <% if match.start_time < DateTime.now.beginning_of_day() %>
+                <td><%= button_to "Edit", edit_match_path(id: match.id), :method => "get", :class => "btn btn-primary dropdown-toggle bggrey" %></td>
+              <% end %>
             </tr>
           <% end %>
         <% end %>
