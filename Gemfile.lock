@@ -49,6 +49,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    database_cleaner (1.4.1)
     diff-lcs (1.2.5)
     docile (1.1.5)
     dotenv (2.1.1)
@@ -177,6 +178,7 @@ DEPENDENCIES
   bootstrap-sass
   capistrano
   capybara
+  database_cleaner
   dotenv-rails
   factory_girl_rails (~> 4.0)
   httparty
