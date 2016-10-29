@@ -6,26 +6,13 @@
     <th>Time</th>
     <th>Competitor 1</th>
     <th>Competitor 2</th>
+    <th>Winner</th>
   </tr>
   <tr>
     <td class="calendar-date"><%= (@match.start_time).strftime("%B %d, %Y") %></td>
     <td class="calendar-time"><%= (@match.start_time).strftime("%I:%M%p") %></td>
     <td class="calendar-competitor1-name"><%= Competitor.find(@match.competitor1_id).name %></td>
     <td class="calendar-competitor2-name"><%= Competitor.find(@match.competitor2_id).name %></td>
+    <td><%= Competitor.find(@match.winner).name %></td>
   </tr>
 </table>
-
-
-
-
-<%= form_for :match, method: "put", :url => match_path do |f| %>
-<div class="form-group">
-  <%= f.label :winner %>:
-  <select>
-    <option name="winner" value="<%= Competitor.find(@match.competitor1_id).id %>"><%= Competitor.find(@match.competitor1_id).name %></option>
-    <option name="winner" value="<%= Competitor.find(@match.competitor2_id).id %>"><%= Competitor.find(@match.competitor2_id).name %></option>
-  </select>
-</div>
-
-  <%= f.submit "Submit", class: "btn btn-primary" %>
-<% end %>
