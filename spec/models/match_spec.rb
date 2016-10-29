@@ -9,11 +9,55 @@ describe Match, type: :model do
   let(:match_list) { create_list(:match, 3, competitor1: competitor1, competitor2: competitor2, winner: competitor2, loser: competitor1) }
 
   describe "Validations" do
-    it { should validate_presence_of(:competitor1) }
-    it { should validate_presence_of(:competitor2) }
-    it { should validate_presence_of(:start_time) }
-    it { should validate_presence_of(:season) }
-    it { should validate_presence_of(:location) }
+    it 'validates that competitor1 is present' do
+      failed_match = build(:match, competitor1: nil)
+      failed_match.valid?
+      failed_match.errors.messages[:competitor1].should eq ["can't be blank"]
+    end
+
+    it 'validates that competitor2 is present' do
+      failed_match = build(:match, competitor2: nil)
+      failed_match.valid?
+      failed_match.errors.messages[:competitor2].should eq ["can't be blank"]
+    end
+
+    it 'validates that start_time is present' do
+      failed_match = build(:match, start_time: nil)
+      failed_match.valid?
+      failed_match.errors.messages[:start_time].should eq ["can't be blank"]
+    end
+
+    it 'validates that season is present' do
+      failed_match = build(:match, season: nil)
+      failed_match.valid?
+      failed_match.errors.messages[:season].should eq ["can't be blank"]
+    end
+
+    it 'validates that location is present' do
+      failed_match = build(:match, location: nil)
+      failed_match.valid?
+      failed_match.errors.messages[:location].should eq ["can't be blank"]
+    end
+
+    it 'validates that the match start time is in the future' do #TODO: add functionality back in
+      time = 1.day.ago
+      match2 = build(:match, start_time: time)
+      match2.valid?
+      match2.errors.messages[:start_time].to_s.should include("must be in the future")
+    end
+
+    it 'validates that there can only be one match a day' do
+      time = match1.start_time
+      match2 = build(:match, start_time: time)
+      match2.valid?
+      match2.errors.messages[:start_time].to_s.should include("match already exists for date")
+    end
+
+    it 'validates that competitors are unique' do
+      failed_match = build(:match, competitor1: competitor1, competitor2: competitor1)
+      failed_match.valid?
+      failed_match.errors.messages[:competitor1].should eq ["competitors must be different"]
+    end
   end
 
   describe "Associations" do
