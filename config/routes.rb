@@ -1,7 +1,7 @@
 DBCPsrkl::Application.routes.draw do
 
   get "/standings", to: "standings#index"
-  get "/bracket", to: ""
+  get "/bracket", to: "rounds#index"
 
   root "home#index"
 

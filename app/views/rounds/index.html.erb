@@ -1,0 +1,55 @@
+<table id="bracket">
+  <tr id="quarterfinals">
+    <td><ul>
+    <% match = @rounds[0].matches[0] %>
+    <li>
+      <%= match.competitor1.name ||= "???" %>
+      <%= match.competitor2.name ||= "???" %>
+      <%= match.start_time ||= "???" %>
+    </li></ul></td>
+    <td><ul>
+    <% match = @rounds[0].matches[1] %>
+    <li>
+      <%= match.competitor1.name ||= "???" %>
+      <%= match.competitor2.name ||= "???" %>
+      <%= match.start_time ||= "???" %>
+    </li></ul></td>
+        <td><ul>
+    <% match = @rounds[0].matches[2] %>
+    <li>
+      <%= match.competitor1.name ||= "???" %>
+      <%= match.competitor2.name ||= "???" %>
+      <%= match.start_time ||= "???" %>
+    </li></ul></td>
+        <td><ul>
+    <% match = @rounds[0].matches[3] %>
+    <li>
+      <%= match.competitor1.name ||= "???" %>
+      <%= match.competitor2.name ||= "???" %>
+      <%= match.start_time ||= "???" %>
+    </li></ul></td>
+  </tr>
+  <tr id="semifinals">
+        <td><ul>
+    <% match = @rounds[1].matches[0] %>
+    <li>
+      <%= match.competitor1.name ||= "???" %>
+      <%= match.competitor2.name ||= "???" %>
+      <%= match.start_time ||= "???" %>
+    </li></ul></td>
+        <td><ul>
+    <% match = @rounds[1].matches[1] %>
+    <li>
+      <%= match.competitor1.name ||= "???" %>
+      <%= match.competitor2.name ||= "???" %>
+      <%= match.start_time ||= "???" %>
+    </li></ul></td>
+  </tr>
+  <tr id="finals"><td><ul>
+    <% match = @rounds[2].matches[0] %>
+    <li>
+      <%= match.competitor1.name ||= "???" %>
+      <%= match.competitor2.name ||= "???" %>
+      <%= match.start_time ||= "???" %>
+    </li></ul></td></tr>
+</table>

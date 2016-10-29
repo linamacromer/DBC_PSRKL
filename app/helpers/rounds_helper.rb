@@ -1,5 +1,6 @@
 module RoundsHelper
   def create_bracket
+    return false if Round.count > 0
    # Return an array of the top 8 competitors
     top_competitors = Competitor.all_standings[0..7]
     round1 = generate_round(top_competitors, Round.create(title: "Quarterfinals"))
@@ -9,5 +10,7 @@ module RoundsHelper
 
   # Return an array of the top 2 competitors
     round3 = next_round(round2, "Finals")
+    true
   end
+
 end
