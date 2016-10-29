@@ -58,6 +58,7 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem "factory_girl_rails", "~> 4.0"
+  gem 'database_cleaner'
 end
 
 gem 'simplecov', :require => false, :group => :test
