@@ -39,3 +39,7 @@ Match.create( :competitor1_id => competitor9.id, :competitor2_id => competitor3.
 Match.create( :competitor1_id => competitor10.id, :competitor2_id => competitor4.id, :start_time => time9, :season => 1, :location => "Basketball Court", :winner_id => competitor10.id, :loser_id => competitor4.id )
 Match.create( :competitor1_id => competitor11.id, :competitor2_id => competitor7.id, :start_time => time10, :season => 1, :location => "Basketball Court", :winner_id => competitor11.id, :loser_id => competitor7.id )
 
+
+
+
+Match.create( :competitor1_id => 1, :competitor2_id => 2, :start_time => 15.days.from_now, :season => 1, :location => "Basketball Court" )
